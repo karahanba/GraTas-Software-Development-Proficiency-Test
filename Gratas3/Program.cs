@@ -8,7 +8,6 @@
 
 using System;
 using System.Collections.Generic;
-//using System.Linq;
 
 namespace Gratas3
 {
@@ -17,7 +16,7 @@ namespace Gratas3
         static void Main()
         {
             Random random = new Random();
-            Console.WriteLine("listenin boyutunu verin...");
+            Console.WriteLine("listenin boyutunu verin.../ Type a positive number to set length of the list... ");
             int n = int.Parse(Console.ReadLine());
 
             double num;                                             // will be assigned to a random value between 0.0 and 1.0
@@ -81,37 +80,12 @@ namespace Gratas3
                 }
             }
 
-
             //Console.WriteLine("Toplam eşleşme: "+matchcount);
-            Console.WriteLine("/////    LargestFractions    /////");
+            Console.WriteLine("/////    Matched Numbers With Largest Fractions    /////");
             foreach (var item in largestFractions)
             {
                 Console.WriteLine(Math.Round(item,2));
             }
-            
-            //Console.WriteLine("/////    All generated numbers in numberlist     /////");
-            //foreach (var item in numberlist)
-            //{
-            //    Console.WriteLine(item);
-            //}
-
-            //Console.WriteLine("/////     decimallist     /////");
-            //foreach (var item in decimallist)
-            //{
-            //    Console.WriteLine(item);
-            //}
-
-            //Console.WriteLine("/////      roundlist       /////");
-            //foreach (var item in roundlist)
-            //{
-            //    Console.WriteLine(item);
-            //}
-
-            //Console.WriteLine("/////      roundForPairs      /////");
-            //foreach (var item in roundForPairs)
-            //{
-            //    Console.WriteLine(item);
-            //}
         }
     }
 }
