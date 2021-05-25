@@ -145,10 +145,12 @@ namespace GraTas4_TwoDimensionalPaintApplication
                 {
                     if (sX>sY)
                     {
+                        sY = sX;
                         g.DrawRectangle(p, cX, cY, sX, sX);
                     }
-                    else if (sY>sX)
+                    else if (sY>=sX)
                     {
+                        sX = sY;
                         g.DrawRectangle(p, cX, cY, sY, sY);
                     }
                     
@@ -268,10 +270,12 @@ namespace GraTas4_TwoDimensionalPaintApplication
             {
                 if (sX > sY)
                 {
+                    sY = sX; 
                     graphics.DrawRectangle(p, cX, cY, sX, sX);
                 }
-                else if (sY > sX)
+                else if (sY >= sX)
                 {
+                    sX = sY;
                     graphics.DrawRectangle(p, cX, cY, sY, sY);
                 }
 
