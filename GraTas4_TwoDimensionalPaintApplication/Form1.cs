@@ -77,6 +77,10 @@ namespace GraTas4_TwoDimensionalPaintApplication
 
 
 
+        private void btnDot_Click(object sender, EventArgs e)
+        {
+            index = 95;
+        }
         private void btnPencil_Click(object sender, EventArgs e)
         {
             index = 1;
@@ -189,6 +193,8 @@ namespace GraTas4_TwoDimensionalPaintApplication
             }
         }
 
+        
+
         Point start;
         Point end;
 
@@ -233,9 +239,16 @@ namespace GraTas4_TwoDimensionalPaintApplication
         {
             paint = false;
 
+            if (index == 95) // Dot
+            {
+                sX = cX;
+                sY = cY;
+                graphics.FillRectangle(p.Brush, x, y, 1, 1);
+            }
+
             sX = x - cX;
             sY = y - cY;
-
+            
             if (index == 3)
             {
                 graphics.DrawLine(p, cX, cY, x, y);

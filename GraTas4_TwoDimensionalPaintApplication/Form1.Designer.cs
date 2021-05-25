@@ -47,6 +47,7 @@
             this.btnPencil = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pic = new System.Windows.Forms.PictureBox();
+            this.btnDot = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
             this.SuspendLayout();
@@ -54,6 +55,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel1.Controls.Add(this.btnDot);
             this.panel1.Controls.Add(this.lblArea);
             this.panel1.Controls.Add(this.lblCircumference);
             this.panel1.Controls.Add(this.lblLength);
@@ -322,6 +324,23 @@
             this.pic.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pic_MouseMove);
             this.pic.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pic_MouseUp);
             // 
+            // btnDot
+            // 
+            this.btnDot.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnDot.FlatAppearance.MouseDownBackColor = System.Drawing.Color.IndianRed;
+            this.btnDot.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RosyBrown;
+            this.btnDot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDot.ForeColor = System.Drawing.Color.Black;
+            this.btnDot.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDot.Location = new System.Drawing.Point(330, 12);
+            this.btnDot.Name = "btnDot";
+            this.btnDot.Size = new System.Drawing.Size(70, 80);
+            this.btnDot.TabIndex = 21;
+            this.btnDot.Text = "( . ) Dot";
+            this.btnDot.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDot.UseVisualStyleBackColor = false;
+            this.btnDot.Click += new System.EventHandler(this.btnDot_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -361,6 +380,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnDot;
     }
 }
 
