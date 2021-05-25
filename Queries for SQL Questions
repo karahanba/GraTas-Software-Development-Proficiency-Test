@@ -1,0 +1,51 @@
+--1)
+--a. Insert the data to Sql Server Local Database.
+--Name your table “Kadro”.
+use BJKKadro;
+select * from Kadro;
+
+--b. Write an SQL Query that outputs the player numbers and names of footballers who play at “DEFANS”.
+select distinct [FORMA NO],[ADI SOYADI] from Kadro where POZİSYONU='DEFANS' order by [FORMA NO]
+
+--c. Write an SQL Query that outputs the names and birth years of footballers.
+select distinct [ADI SOYADI], YEAR(GETDATE())-YAŞI-2 as 'Birth Year' from Kadro  -- iki sene öncenin kadrosu olması sebebiyle -2 ekledim.
+
+--d. Write an SQL Query that outputs countries and number of players from that country.
+select distinct UYRUĞU,Count(UYRUĞU) as 'Number of Players' from Kadro group by UYRUĞU
+
+--e. Write an SQL Query that outputs player names including the letter “T” and name that column as “The Players whose name includes ‘T’ ”.
+select [ADI SOYADI] as 'The Players whose name includes "T"' from Kadro where [ADI SOYADI] like '%T%'
+
+--2)Using the same data as above create a table named Country
+--select distinct * from [Sheet1$C1:C24] -- to specify data to be transfered from excel.
+
+--a. Insert each country with a Unique ID number.
+--dbo.Country>Design>Added "Id" Column and set it as primary key.DONE
+
+--b. Update your Kadro table’s country column with these IDs.
+ALTER TABLE Kadro_test
+ADD CountryID int;
+
+select * from Kadro_test
+select * from Country
+
+UPDATE Kadro_test SET CountryID=1 where UYRUĞU='ALMANYA';
+UPDATE Kadro_test SET CountryID=2 where UYRUĞU='FRANSA';
+UPDATE Kadro_test SET CountryID=3 where UYRUĞU='HIRVATİSTAN';
+UPDATE Kadro_test SET CountryID=4 where UYRUĞU='HOLLANDA';
+UPDATE Kadro_test SET CountryID=5 where UYRUĞU='KANADA';
+UPDATE Kadro_test SET CountryID=6 where UYRUĞU='PORTEKİZ';
+UPDATE Kadro_test SET CountryID=7 where UYRUĞU='SIRBİSTAN';
+UPDATE Kadro_test SET CountryID=8 where UYRUĞU='TÜRKİYE CUMHURİYETİ';
+UPDATE Kadro_test SET CountryID=9 where UYRUĞU='ŞİLİ';
+
+ALTER TABLE Kadro_Test
+DROP COLUMN UYRUĞU;
+select * from Kadro_test
+
+--c. Write an SQL Query that joins these two tables and outputs names of footballers and their countries.
+select t.[ADI SOYADI],c.UYRUĞU from Kadro_test t 
+left join Country c on t.CountryID=c.CountryId
+
+--d. (Bonus: Discuss the advantages and disadvantages of such normalized data.)
+--normalizasyon veri tekrarının önüne geçerek, ekleme, güncelleme, silme gibi işlemlerdeki anormalliklerin önüne geçilmesini sağlar
