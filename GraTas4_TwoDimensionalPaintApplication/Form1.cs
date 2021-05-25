@@ -50,17 +50,17 @@ namespace GraTas4_TwoDimensionalPaintApplication
             double circumference = 0;
             if (index == 4 || index == 5)//circle or ellipse
             {
-                circumference = 2*Math.PI*Math.Sqrt(0.5*(((width / 2) ^ 2) + ((height / 2) ^ 2)));
+                circumference = 2*Math.PI* Math.Sqrt(0.5 * ((Math.Pow(width / 2, 2)) + (Math.Pow(height / 2, 2))));
             }
             else if (index == 6 || index == 7)//square or rectangle
             {
-                circumference = 2 * (width + height);
+                circumference = 2 * (Math.Abs(width) + Math.Abs(height));
             }
             
             return circumference;
         }
 
-        private double findArea(int width, int height)
+        private double findArea(int width, int height) /**/
         {
             double area = 0;
             if (index == 4 || index == 5)//circle or ellipse
