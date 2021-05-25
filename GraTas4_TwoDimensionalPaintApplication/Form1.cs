@@ -145,12 +145,12 @@ namespace GraTas4_TwoDimensionalPaintApplication
                 {
                     if (sX>sY)
                     {
-                        sY = sX;
+                        //sY = sX;
                         g.DrawRectangle(p, cX, cY, sX, sX);
                     }
                     else if (sY>=sX)
                     {
-                        sX = sY;
+                        //sX = sY;
                         g.DrawRectangle(p, cX, cY, sY, sY);
                     }
                     
@@ -247,10 +247,12 @@ namespace GraTas4_TwoDimensionalPaintApplication
             {
                 if (sX>sY)
                 {
+                    sY = sX;
                     graphics.DrawEllipse(p, cX, cY, sX, sX);
                 }
                 else
                 {
+                    sX = sY;
                     graphics.DrawEllipse(p, cX, cY, sY, sY);
                 }
                 
@@ -266,7 +268,7 @@ namespace GraTas4_TwoDimensionalPaintApplication
                 lblArea.Text = findArea(sX, sY).ToString();
             }
 
-            if (index == 6)
+            if (index == 6) // square
             {
                 if (sX > sY)
                 {
